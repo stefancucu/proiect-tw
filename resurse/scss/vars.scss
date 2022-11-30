@@ -1,0 +1,25 @@
+body {
+    --primary: #2F64A3;
+    --secondary: #F0BB5D;
+    --tertiary: #FAFAFA;
+    --quaternary: #3796F0;
+    --quinary: #C9DCF2;
+
+    --timp-tranzitie: 0.8s;
+
+    --latime-celula: 200px;
+    --inaltime-celula: 25px;
+    --timp-tranzitie-header: 0.5s;
+    --timp-animatie-submeniu: 0.8s;
+    @media screen and (min-width: 800px) and (max-width: 1400px) {
+        --latime-celula: 90px;
+        --inaltime-celula: 20px;
+    }
+    @media screen and (max-width: 800px) {
+        --latime-celula: 100vw;
+        --inaltime-celula: 30px;
+    }
+
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+}

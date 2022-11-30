@@ -1,0 +1,28 @@
+<div class="galerie-container">
+    <div class="galerie">
+        <% for (let i=0; i < user.images.length; i++) { %>
+            <figure id="img<%= i %>">
+                <picture>
+                    <source media="(min-width: 1400px)"
+                        srcset="data:image/jpeg;charset=utf-8;base64,<%= user.images[i].cale_imagine %>">
+                    <source media="(min-width: 800px)"
+                        srcset="data:image/jpeg;charset=utf-8;base64,<%= user.images[i].cale_imagine_medium %>">
+                    <img src="data:image/jpeg;charset=utf-8;base64,<%= user.images[i].cale_imagine_small %>"
+                        alt="<%= user.images[i].titlu %>">
+                </picture>
+                <figcaption>
+                    <p id="desc"><%= user.images[i].descriere %></p>
+                    <p><%= user.images[i].copyright %></p>
+                </figcaption>
+            </figure>
+        <% } %>
+        <div id="oferta">
+            <div id="text">
+                Ofertele noastre
+                <div id="text-reflectat">
+                    Ofertele noastre
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+@use "../../node_modules/bootstrap/scss/bootstrap" with (
+    $primary: #2F64A3,
+    $secondary: #F0BB5D,
+
+    $btn-link-color: #2F64A3,
+
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 500px,
+        md: 800px,
+        lg: 1000px,
+        xl: 1300px,
+        xxl: 1440px
+    ),
+
+    $border-radius: .5rem,
+
+    $h1-font-size:                3rem,
+    $h2-font-size:                2.5rem,
+    $h3-font-size:                2rem,
+    $h4-font-size:                1.75rem,
+    $h5-font-size:                1.5rem,
+    $h6-font-size:                1.25rem,
+
+    $font-family-sans-serif: 'Source Sans Pro',
+
+    $gradient: linear-gradient(180deg, rgba(#FAFAFA, .15), rgba(#FAFAFA, 0)),
+
+);

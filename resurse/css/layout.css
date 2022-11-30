@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+}
+body * {
+  margin: 0;
+}
+body main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "z1 z1 z1 z1" "z8 z8 z8 z8" "z3 z2 z2 z4" "z5 z6 z7 z7";
+  font-size: 1em;
+}
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+  body main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "z1 z1" "z8 z8" "z2 z2" "z3 z4" "z5 z6" "z7 z7";
+  }
+}
+@media screen and (max-width: 800px) {
+  body main {
+    display: block;
+  }
+}
+body main #welcome {
+  grid-area: z1;
+}
+body main #diverse {
+  grid-area: z8;
+}
+body main #tabel {
+  grid-area: z2;
+}
+body main #calendar {
+  grid-area: z3;
+}
+body main #anunturi {
+  grid-area: z4;
+}
+body main #users {
+  grid-area: z5;
+}
+body main #userstats {
+  grid-area: z6;
+}
+body main #serverinfo {
+  grid-area: z7;
+}
+
+/*# sourceMappingURL=layout.css.map */

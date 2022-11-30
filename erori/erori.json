@@ -1,0 +1,25 @@
+{
+    "cale_baza": "../resurse/svg/erori",
+    "eroare_default":{
+        "titlu":"500 - Eroare",
+        "text": "Eroare internă",
+        "imagine":"eroare.svg"
+    },
+    "info_erori": [
+        {
+            "identificator":404,
+            "status":true,
+            "titlu":"404 - Nu am găsit pagina",
+            "text": "Pagina căutată nu există",
+            "imagine":"notfound.svg"
+        },
+        {
+            "identificator":403,
+            "status":true,
+            "titlu":"403 - Interzis",
+            "text": "Nu aveți permisiunea de a accesa pagina",
+            "imagine":"forbidden.svg"
+        }
+    ]
+}
+  

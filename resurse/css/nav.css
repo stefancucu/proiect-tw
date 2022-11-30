@@ -1,0 +1,268 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--tertiary);
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  font-size: 1.3em;
+  z-index: 1;
+}
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+  header {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  header {
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+  }
+  header #hamburger-container {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    background-color: var(--primary);
+  }
+  header #hamburger-container #hamburger {
+    height: 28px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header #hamburger-container #hamburger .hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px;
+    border-radius: 10px;
+    transform: translateX(-60vw);
+    animation-name: animatie_hamburger_line;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.91, -0.1, 0.49, 0.96);
+    animation-fill-mode: forwards;
+  }
+  header #hamburger-container #hamburger .hamburger-line:nth-child(1n) {
+    animation-delay: 0.25s;
+  }
+  header #hamburger-container #hamburger .hamburger-line:nth-child(2n) {
+    animation-delay: 0.5s;
+  }
+  header #hamburger-container #hamburger .hamburger-line:nth-child(3n) {
+    animation-delay: 0.75s;
+  }
+  header:active > nav, header:hover > nav {
+    display: flex;
+  }
+}
+header h1 {
+  color: var(--secondary);
+  flex-grow: 1;
+  margin-left: 15vw;
+}
+@media screen and (max-width: 800px) {
+  header h1 {
+    display: none;
+  }
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 9;
+  padding: 0;
+  margin-right: 15vw;
+}
+@media screen and (max-width: 800px) {
+  header nav {
+    display: none;
+    margin-right: 0vw;
+    background-color: var(--primary);
+    -webkit-mask-image: linear-gradient(to top, transparent, white 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 500%;
+    mask-image: linear-gradient(to top, transparent, white 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 500%;
+    animation-name: animatie_submeniu_mobile;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transform-origin: 50% 0;
+  }
+}
+header nav > ul {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  list-style-type: none;
+}
+@media screen and (max-width: 800px) {
+  header nav > ul {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+header nav > ul > li {
+  height: var(--inaltime-celula);
+  width: var(--latime-celula);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header nav > ul > li > a {
+  width: var(--latime-celula);
+  min-height: var(--inaltime-celula);
+  text-align: center;
+}
+header nav > ul a {
+  text-decoration: none;
+  color: var(--tertiary);
+  transition: var(--timp-tranzitie-header);
+  cursor: pointer;
+}
+header nav > ul a:hover {
+  color: var(--secondary);
+  transition: var(--timp-tranzitie-header);
+}
+header nav > ul .sublist {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  header nav > ul .sublist {
+    order: 0;
+  }
+}
+header nav > ul .sublist > a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header nav > ul .sublist > a > i {
+  margin-right: 5px;
+}
+header nav > ul .sublist > a > p {
+  opacity: 0;
+  margin: 0;
+  transition: var(--timp-tranzitie-header);
+}
+@media screen and (max-width: 800px) {
+  header nav > ul .sublist > a > p {
+    display: none;
+  }
+  header nav > ul .sublist > a > i {
+    margin: 0;
+  }
+}
+header nav > ul .sublist:hover > a > p {
+  opacity: 1;
+  transition: var(--timp-tranzitie-header);
+}
+header nav > ul .sublist ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+  display: none;
+  z-index: 100;
+  animation-name: animatie_submeniu;
+  animation-duration: var(--timp-animatie-submeniu);
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transform-origin: 50% 0;
+}
+header nav > ul .sublist ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: var(--latime-celula);
+  background-color: var(--primary);
+  padding-top: 10px;
+}
+header nav > ul .sublist ul li > a {
+  color: var(--tertiary);
+  text-decoration: none;
+  text-align: center;
+  transition: var(--timp-tranzitie-header);
+}
+header nav > ul .sublist ul li > a:hover {
+  color: var(--secondary);
+  transition: var(--timp-tranzitie-header);
+}
+header nav > ul .sublist ul :last-child {
+  padding-bottom: 10px;
+}
+header nav > ul .sublist:hover ul {
+  display: block;
+}
+
+@keyframes animatie_submeniu {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes animatie_submeniu_mobile {
+  0% {
+    -webkit-mask-position: 0 150%;
+    mask-position: 0 150%;
+  }
+  99% {
+    -webkit-mask-position: 0 -100%;
+    mask-position: 0 -100%;
+  }
+  100% {
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+@keyframes animatie_hamburger_line {
+  0% {
+    transform: translateX(-60vw);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    background-color: var(--secondary);
+  }
+}
+
+/*# sourceMappingURL=nav.css.map */

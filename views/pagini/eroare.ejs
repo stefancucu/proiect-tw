@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - Eroare <%= status ? status.status : 500 %></title>
+    <link rel="stylesheet" href="/resurse/css/eroare.css" type="text/css"/>
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <%- include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs") %>
+    <main>
+        <div id="eroare">
+            <img src="<%= imagine %>" alt="Eroare">
+            <h1><%= titlu %></h1>
+            <h2><%= text %></h2>
+            <a href="/">Înapoi la pagina principală</a>
+        </div>
+    </main>
+    <%- include("../fragmente/footer.ejs") %>
+</body>
+</html>

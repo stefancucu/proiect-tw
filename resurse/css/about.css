@@ -1,0 +1,107 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: normal;
+  height: 100vh;
+  margin: 0;
+}
+body * {
+  margin: 0;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main #intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+}
+body main #intro h2 {
+  font-size: 5em;
+  border-bottom: 5px solid var(--quaternary);
+}
+body main #intro .descriere {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+body main #intro .descriere div {
+  width: 50%;
+}
+body main #intro .descriere img {
+  width: 40%;
+}
+@media screen and (max-width: 800px) {
+  body main #intro .descriere {
+    flex-direction: column;
+  }
+  body main #intro .descriere div {
+    margin-top: 20px;
+    width: 100%;
+  }
+  body main #intro .descriere img {
+    width: 80%;
+  }
+}
+body main #intro::after {
+  content: "";
+  height: 0;
+  width: 100%;
+  border-top: 1px solid var(--quaternary);
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 800px) {
+  body main #intro::after {
+    width: 100%;
+  }
+}
+body main #poveste {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+}
+body main #poveste h2 {
+  font-size: 2em;
+  border-bottom: 5px solid var(--quaternary);
+  margin-bottom: 20px;
+}
+body main #poveste .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+body main #poveste .content p {
+  width: 60%;
+}
+body main #poveste .content img {
+  width: 30%;
+}
+@media screen and (max-width: 800px) {
+  body main #poveste .content {
+    flex-direction: column;
+  }
+  body main #poveste .content p {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  body main #poveste .content img {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

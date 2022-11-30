@@ -1,0 +1,89 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+
+body {
+    @include flex(column, space-between, normal);
+    height: 100vh;
+    margin: 0;
+    * {
+        margin: 0
+    }
+    main {
+        width: 100%;
+        @include flex(column, center, center);
+        #intro {
+            @include flex(column, center, flex-start);
+            width: 90%;
+            h2 {
+                font-size: 5em;
+                border-bottom: 5px solid var(--quaternary);
+            }
+            .descriere {
+                @include flex(row, space-between, center);
+                width: 100%;
+                div {
+                    width: 50%;
+                }
+                img {
+                    width: 40%;
+                }
+                @media screen and (max-width: 800px) {
+                    flex-direction: column;
+                    div {
+                        margin-top: 20px;
+                        width: 100%;
+                    }
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+            &::after {
+                content: "";
+                height: 0;
+                width: 100%;
+                border-top: 1px solid var(--quaternary);
+                margin-bottom: 20px;
+        
+                @media screen and (max-width: 800px) {
+                    width: 100%;
+                }
+            }
+        }
+        #poveste {
+            @include flex(column, center, flex-start);
+            width: 90%;
+            h2 {
+                font-size: 2em;
+                border-bottom: 5px solid var(--quaternary);
+                margin-bottom: 20px;
+            }
+            .content {
+                @include flex(row, space-between, center);
+                width: 100%;
+                margin-bottom: 20px;
+                p {
+                    width: 60%;
+                }
+                img {
+                    width: 30%;
+                }
+                @media screen and (max-width: 800px) {
+                    flex-direction: column;
+                    p {
+                        width: 100%;
+                        margin-top: 20px;
+                        text-align: center;
+                    }
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}

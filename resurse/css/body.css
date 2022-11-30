@@ -1,0 +1,539 @@
+main {
+  background-color: white;
+}
+main strong {
+  color: var(--quaternary);
+}
+main p,
+main h2,
+main h3,
+main strong,
+main a,
+main ul {
+  transition: var(--timp-tranzitie) !important;
+}
+@media screen and (max-width: 1400px) {
+  main {
+    font-size: 0.9em !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  main {
+    font-size: 0.8em !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+  }
+}
+main h3 {
+  color: var(--quaternary);
+  margin: 0;
+  padding: 0;
+  font-size: 1.8em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+main h2 {
+  color: var(--quaternary);
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+main #welcome h2 {
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+@media screen and (max-width: 1400px) {
+  main #welcome h2 {
+    font-size: 2.5em !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  main #welcome h2 {
+    margin-top: 0px;
+  }
+}
+main #welcome p {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 1400px) {
+  main #welcome p {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  main #welcome p {
+    font-size: 0.95rem !important;
+    margin-top: 0;
+  }
+}
+main #welcome > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+@media screen and (max-width: 1400px) {
+  main #welcome > p {
+    font-size: 1.3rem !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  main #welcome > p {
+    font-size: 1.2rem !important;
+  }
+}
+main #welcome ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+}
+@media screen and (max-width: 800px) {
+  main #welcome ul {
+    flex-direction: column;
+  }
+}
+main #welcome ul li {
+  padding: 0;
+  width: 25%;
+  height: 150px;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1400px) {
+  main #welcome ul li {
+    height: 140px;
+    font-size: 0.95em;
+    height: 160px;
+  }
+}
+@media screen and (max-width: 800px) {
+  main #welcome ul li {
+    width: 100%;
+    font-size: 0.9em;
+    height: 100px;
+  }
+}
+main #welcome ul li p {
+  margin: 0;
+}
+main #welcome ul li > i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: var(--secondary);
+  font-size: 2em;
+}
+@media screen and (max-width: 800px) {
+  main #welcome ul li > i {
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+  }
+}
+main #diverse #oferte {
+  width: 100%;
+}
+main #diverse #oferte #reclame {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  main #diverse #oferte #reclame {
+    flex-direction: column;
+  }
+}
+main #diverse #oferte #reclame figure {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+main #diverse #oferte #reclame figure figcaption {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  main #diverse #oferte #reclame figure figcaption {
+    width: 70%;
+  }
+}
+main #diverse #noutati h2 {
+  margin: auto;
+}
+main #diverse #noutati #prezentari {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+}
+main #diverse #noutati #prezentari .prezentare {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+main #diverse #noutati #prezentari .prezentare iframe {
+  border: 0.75em outset var(--primary);
+  width: 1100px;
+  height: 600px;
+}
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+  main #diverse #noutati #prezentari .prezentare iframe {
+    font-size: 1em;
+    width: 600px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 800px) {
+  main #diverse #noutati #prezentari .prezentare iframe {
+    width: 250px;
+    height: 100%;
+  }
+}
+main #diverse #noutati #prezentari .prezentare .iframe-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+main #diverse #noutati #prezentari .prezentare .iframe-select a {
+  border: 0.25em solid var(--primary);
+  border-left-width: 0.15em;
+  border-right-width: 0;
+  border-radius: 0.4em 0 0 0.4em;
+  background-color: var(--quinary);
+  width: 100px;
+  margin-bottom: 5px;
+  padding: 5px 5px 5px 10px;
+  transition: var(--timp-tranzitie);
+  box-shadow: inset 4px 1px 0px 0px var(--quaternary);
+  text-decoration: none;
+}
+@media screen and (max-width: 800px) {
+  main #diverse #noutati #prezentari .prezentare .iframe-select a {
+    width: 50px;
+  }
+}
+main #diverse #noutati #prezentari .prezentare .iframe-select a:hover {
+  background-color: var(--quaternary);
+  box-shadow: none;
+  transition: var(--timp-tranzitie);
+  color: var(--tertiary);
+}
+main #diverse #noutati #prezentari .info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+main #diverse #noutati #prezentari .info-container .info-sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+main #diverse #noutati #prezentari .info-container .info-sidebar i {
+  font-size: 2.6em;
+  margin-right: 10px;
+  color: var(--quaternary);
+}
+main #diverse #noutati #prezentari .video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+main #diverse #noutati #prezentari .video video {
+  width: 700px;
+  height: 400px;
+}
+@media screen and (max-width: 800px) {
+  main #diverse #noutati #prezentari .video video {
+    width: 100%;
+    height: fit-content;
+  }
+}
+main #diverse #faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #diverse #faq details {
+  border: 1px solid var(--primary);
+  background-color: var(--quinary);
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+  width: calc(90% - 20px);
+  margin-top: 10px;
+}
+main #diverse #faq summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  background-color: var(--primary);
+  color: var(--tertiary);
+}
+main #diverse #faq details[open] {
+  padding: 0.5em;
+}
+main #diverse #faq details[open] summary {
+  border-bottom: 1px solid var(--primary);
+  margin-bottom: 0.5em;
+}
+
+#tabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#tabel .table-container {
+  width: 100%;
+  overflow: auto;
+}
+#tabel .table-container table {
+  overflow-x: auto;
+  width: 700px;
+  margin: auto;
+  border-spacing: 5px;
+  caption-side: bottom;
+}
+@media screen and (max-width: 800px) {
+  #tabel .table-container table {
+    border-spacing: 0px;
+  }
+}
+#tabel .table-container table td,
+#tabel .table-container table th {
+  border: 1px solid black;
+}
+#tabel .table-container table th {
+  background-color: var(--primary);
+  color: var(--tertiary);
+}
+#tabel .table-container table tbody {
+  text-align: center;
+}
+#tabel .table-container table tbody tr {
+  transition: var(--timp-tranzitie);
+}
+#tabel .table-container table tbody tr:nth-child(odd) {
+  background-color: var(--quaternary);
+}
+#tabel .table-container table tbody tr:nth-child(even) {
+  background-color: var(--quinary);
+}
+#tabel .table-container table tbody tr:hover {
+  background-color: var(--primary);
+  color: var(--tertiary);
+}
+#tabel .table-container table tfoot {
+  text-align: center;
+}
+
+#welcome .section-title,
+#diverse .section-title {
+  width: calc(90% - 20px);
+  height: 50px;
+  background-color: var(--primary) !important;
+  color: var(--tertiary);
+  margin: auto;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1400px) {
+  #welcome .section-title,
+#diverse .section-title {
+    width: calc(90% - 20px);
+  }
+}
+@media screen and (max-width: 800px) {
+  #welcome .section-title,
+#diverse .section-title {
+    width: calc(100% - 20px);
+    margin-top: 0;
+  }
+}
+#welcome .section-title h2,
+#diverse .section-title h2 {
+  color: var(--secondary);
+  line-height: 50px;
+  font-size: 2em;
+  flex-grow: 11;
+  text-align: center;
+  margin: 0;
+  align-self: flex-start;
+}
+#welcome .section-title i,
+#diverse .section-title i {
+  color: var(--secondary);
+  margin-left: 10%;
+  flex-grow: 1;
+  font-size: 2rem;
+}
+#welcome .section-title .bar,
+#diverse .section-title .bar {
+  height: 200%;
+  flex-grow: 1.2;
+  background-color: white;
+  transform: skew(-45deg);
+}
+@media screen and (max-width: 300px) {
+  #welcome .section-title .bar,
+#diverse .section-title .bar {
+    display: none;
+  }
+}
+
+#userstats .user-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+}
+#userstats .user-container img {
+  width: 100px;
+  height: 100px;
+}
+#userstats .user-container .user-info {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.watermark {
+  display: none;
+}
+
+@media print {
+  img,
+figure,
+iframe,
+video,
+.prezentare,
+.iframe-select {
+    display: none;
+    opacity: 0;
+  }
+  a, p, h1, h2, h3, li, td, th, strong, s, ins, i, caption, summary, details {
+    text-decoration: none;
+    color: initial !important;
+  }
+  body {
+    overflow: visible;
+  }
+  body * {
+    float: none;
+  }
+  body .watermark {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    border: 5px double var(--primary);
+    background-color: var(--tertiary);
+    width: 100px;
+    height: 2cm;
+    opacity: 0.65;
+    text-align: center;
+    padding-top: 0.5cm;
+  }
+  body header {
+    page-break-after: always;
+    width: 100%;
+    margin: 0;
+    margin-top: calc(50vh - 2.5em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body header nav,
+body header .hamburger-container {
+    display: none;
+  }
+  body header h1 {
+    font-size: 2.5em;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0;
+  }
+  body #diverse {
+    margin-bottom: 20vh;
+  }
+  body footer {
+    page-break-before: always;
+  }
+}
+@page {
+  size: A4 portrait;
+}
+@page :left {
+  margin-left: 2.5cm;
+  margin-right: 0.5cm;
+}
+@page :right {
+  margin-left: 0.5cm;
+  margin-right: 2.5cm;
+}
+hr {
+  background-image: linear-gradient(to bottom, white, var(--quaternary), white);
+  height: 30px;
+  width: 90%;
+  border: none;
+  border-top: none !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+hr::before {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 30px;
+  background: radial-gradient(farthest-side, var(--quaternary) 0%, var(--quaternary) 50%, var(--primary) 80%, transparent 100%);
+}
+
+/*# sourceMappingURL=body.css.map */

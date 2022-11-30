@@ -1,0 +1,76 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.produse {
+    width: 100%;
+    @include flex(column, center, center);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .telefoane {
+        width: 100%;
+        @include flex(row, center, center);
+    }
+
+    &::before {
+        content: "";
+        height: 0;
+        width: 80%;
+        // border-top: 1px solid var(--quaternary);
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
+}
+
+.telefon {
+    @include flex(column, space-between, center);
+    margin: 0 20px;
+    width: 250px;
+    height: 365px;
+    text-align: center;
+    &:hover {
+        box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    }
+    img {
+        height: 200px;
+        width: auto;
+        margin-top: 10px;
+    }
+    .btn-link {
+        font-weight: 700;
+        font-size: 1.1rem;
+        opacity: 0.8;
+    }
+    p {
+        font-weight: 500;
+        font-size: 1.3rem;
+        s {
+            margin-right: 10px;
+        }
+    }
+    
+    @media screen and (max-width: 1400px) {
+        .btn-link {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .btn-link {
+            font-size: 0.95rem;
+        }
+        p {
+            font-size: 1.05rem;
+        }
+    }
+}

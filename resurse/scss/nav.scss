@@ -1,0 +1,240 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+header {
+  @include flex(row, center, flex-end);
+  color: var(--tertiary);
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  font-size: 1.3em;
+  z-index: 1;
+  @media screen and (min-width: 800px) and (max-width: 1400px) {
+    font-size: 1em;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 1.2em;
+    @include flex(column, center, center);
+    background-color: inherit;
+    #hamburger-container {
+      opacity: 1;
+      @include flex(column, center, center);
+      margin: auto;
+      width: 100%;
+      background-color: var(--primary);
+      #hamburger {
+        height: 28px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        @include flex(column, space-between, center);
+        .hamburger-line {
+          width: 30px;
+          height: 3px;
+          background-color: white;
+          margin: 3px;
+          border-radius: 10px;
+          transform: translateX(-60vw);
+          animation-name: animatie_hamburger_line;
+          animation-duration: 1.2s;
+          animation-iteration-count: 1;
+          animation-timing-function: cubic-bezier(0.91, -0.1, 0.49, 0.96);
+          animation-fill-mode: forwards;
+        }
+        @for $i from 1 through 3 {
+          .hamburger-line:nth-child(#{$i}n) {
+            animation-delay: #{$i * 0.25}s;
+          }
+        }
+      }
+    }
+    &:active > nav,
+    &:hover > nav {
+      display: flex;
+    }
+  }
+  a {
+    // text-decoration: none;
+    // color: var(--tertiary);
+  }
+  h1 {
+    color: var(--secondary);
+    flex-grow: 1;
+    margin-left: 15vw;
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+  nav {
+    @include flex(row, center, center);
+    @media screen and (max-width: 800px) {
+      display: none;
+      margin-right: 0vw;
+      background-color: var(--primary);
+      -webkit-mask-image: linear-gradient(to top, transparent, white 100%);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 500%;
+      mask-image: linear-gradient(to top, transparent, white 100%);
+      mask-repeat: no-repeat;
+      mask-size: 100% 500%;
+      animation-name: animatie_submeniu_mobile;
+      animation-duration: 1.2s;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      transform-origin: 50% 0;
+    }
+    flex-grow: 9;
+    padding: 0;
+    margin-right: 15vw;
+    > ul {
+      margin-bottom: 0;
+      @include flex(row, space-between, center);
+      width: 100%;
+      padding-bottom: 20px;
+      list-style-type: none;
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      > li {
+        height: var(--inaltime-celula);
+        width: var(--latime-celula);
+        @include flex(row, center, center);
+        > a {
+          width: var(--latime-celula);
+          min-height: var(--inaltime-celula);
+          text-align: center;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--tertiary);
+        transition: var(--timp-tranzitie-header);
+        cursor: pointer;
+      }
+      a:hover {
+        color: var(--secondary);
+        transition: var(--timp-tranzitie-header);
+      }
+
+      .sublist {
+        order: -1;
+        @media screen and (max-width: 800px) {
+          order: 0;
+        }
+        @include flex(column, flex-start, center);
+        > a {
+          @include flex(row, center, center);
+          > i {
+            margin-right: 5px;
+          }
+          > p {
+            opacity: 0;
+            margin: 0;
+            transition: var(--timp-tranzitie-header);
+          }
+          @media screen and (max-width: 800px) {
+            > p {
+              display: none;
+            }
+            > i {
+              margin: 0;
+            }
+          }
+        }
+        > &:hover {
+          > a > p {
+            opacity: 1;
+            transition: var(--timp-tranzitie-header);
+          }
+        }
+        ul {
+          @include flex(column, flex-start, center);
+          padding: 0;
+          list-style-type: none;
+          display: none;
+          z-index: 100;
+
+          animation-name: animatie_submeniu;
+          animation-duration: var(--timp-animatie-submeniu);
+          animation-iteration-count: 1;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+          transform-origin: 50% 0;
+
+          li {
+            @include flex(row, center, center);
+            width: var(--latime-celula);
+            background-color: var(--primary);
+            padding-top: 10px;
+            > a {
+              color: var(--tertiary);
+              text-decoration: none;
+              text-align: center;
+              transition: var(--timp-tranzitie-header);
+            }
+            > a:hover {
+              color: var(--secondary);
+              transition: var(--timp-tranzitie-header);
+            }
+          }
+          :last-child {
+            padding-bottom: 10px;
+          }
+        }
+        &:hover {
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes animatie_submeniu {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes animatie_submeniu_mobile {
+  0% {
+    -webkit-mask-position: 0 150%;
+    mask-position: 0 150%;
+  }
+  99% {
+    -webkit-mask-position: 0 -100%;
+    mask-position: 0 -100%;
+  }
+  100% {
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
+@keyframes animatie_hamburger_line {
+  0% {
+    transform: translateX(-60vw);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    background-color: var(--secondary);
+  }
+}

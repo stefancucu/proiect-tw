@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - Magazin online de telefoane mobile și accesorii</title>
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <link rel="stylesheet" href="/resurse/css/body.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/galerie.css" type="text/css" />
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <div class="watermark">Cucu Stefan Catalin</div>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <section id="welcome">
+                <div class="section-title bg-primary bg-gradient">
+                    <h2>Bine ați venit!</h2>
+                    <div class="bar"></div> <i class="fa-solid fa-house"></i>
+                </div>
+                <p><em>QuickGSM</em> este un magazin online de telefoane mobile și accesorii, cu cele mai ieftine
+                    preturi!
+                </p>
+                <ul>
+                    <li><i class="fa-solid fa-mobile"></i>
+                        <p>Gama largă de telefoane mobile & accesorii: <i>Apple, Samsung, Huawei, Xiaomi</i></p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <p>Transport <strong>gratuit</strong> la comenzile de peste <strong>100 lei</strong> oriunde în
+                            România</p>
+                    </li>
+                    <li><i class="fa-solid fa-box-open"></i>
+                        <p>Deschiderea coletului la livrare</p>
+                    </li>
+                    <li><i class="fa-solid fa-circle-check"></i>
+                        <p>Garanție 24 luni </br> Servicii suport de calitate!</p>
+                    </li>
+                </ul>
+            </section>
+            <div id="diverse">
+                <section id="oferte">
+                    <section id="reclame">
+                        <figure>
+                            <picture>
+                                <source srcset="resurse/img/buybackL.png" media="(min-width:1400px)" />
+                                <source srcset="resurse/img/buybackM.png" media="(min-width:800px)" />
+                                <img src="resurse/img/buybackS.png" alt="Oferta Buy Back QuickGSM" />
+                            </picture>
+                            <figcaption>
+                                <strong>QuickGSM</strong> vă oferă posibilitatea de a vinde telefoanele vechi, care nu
+                                mai sunt folosite, pentru a cumpăra telefoane noi sau accesorii. Veți primi 10% reducere
+                                la cumpărarea oricărui telefon nou!
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <picture>
+                                <source srcset="resurse/img/ofertaL.jpg" media="(min-width:1400px)" />
+                                <source srcset="resurse/img/ofertaM.jpg" media="(min-width:900px)" />
+                                <img src="resurse/img/ofertaS.jpg" alt="Oferta Huawei QuickGSM" />
+                            </picture>
+                        </figure>
+                    </section>
+                    <%- include("../fragmente/galerie.ejs") %>
+                        <section class="produse">
+                            <hr />
+                            <div class="telefoane">
+                                <div class="telefon">
+                                    <img src="resurse/img/telefoane/blackview-bl6000-pro.jpg" style="width: 100px;"
+                                        alt="Blackview BL6000 Pro" title="Blackview BL6000 Pro" />
+                                    <button class="btn btn-link">Telefon mobil Blackview BL6000 Pro</button>
+                                    <p><s>2099 lei</s><ins>1799 lei</ins></p>
+                                    <button class="btn btn-primary">Adauga in cos</button>
+                                </div>
+                                <div class="telefon">
+                                    <img src="resurse/img/telefoane/huaweihonor70.jpg" style="width: 100px;"
+                                        alt="Huawei Honor 70 5G" title="Huawei Honor 70 5G" />
+                                    <button class="btn btn-link">Telefon mobil Huawei Honor 70 5G</button>
+                                    <p><s>2799 lei</s><ins>2199 lei</ins></p>
+                                    <button class="btn btn-primary">Adauga in cos</button>
+                                </div>
+                            </div>
+                        </section>
+                </section>
+                <section id="noutati">
+                    <div class="section-title bg-primary bg-gradient">
+                        <h2>Noutăți </h2>
+                        <div class="bar"></div><i class="fa-solid fa-star"></i>
+                    </div>
+                    <section id="prezentari">
+                        <h3>Cele mai noi prezentari <i class="fa-solid fa-video"></i></h3>
+                        <div class="prezentare">
+                            <div class="iframe-select">
+                                <a href="https://www.youtube.com/embed/FT3ODSg1GFE" target="ifr">iPhone 14 Pro</a>
+                                <a href="https://www.youtube.com/embed/sYn_Heq8HHI" target="ifr">Google Pixel 7 & Pixel
+                                    7 Pro</a>
+                            </div>
+                            <iframe name="ifr" width="560" height="315" src="https://www.youtube.com/embed/FT3ODSg1GFE"
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="info-container">
+                            <div class="info-sidebar">
+                                <i class="fa-solid fa-exclamation fa-bounce"></i>
+                                <p>Mai multe detalii:</p>
+                            </div>
+                            <ul>
+                                <li><a href="https://www.apple.com/iphone-14-pro/" target="_blank">iPhone 14 Pro</a>
+                                    <a href="resurse/pdf/iphone14.pdf" download>Specificații tehnice</a>
+                                </li>
+                                <li><a href="https://store.google.com/intl/en/ideas/" target="_blank">Google Pixel</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="video">
+                            <h3>Recenzia noastră</h3>
+                            <video controls="controls" preload="metadata" poster="/resurse/img/poster_review.png">
+                                <source src="/resurse/video/mov/smartphone.mov" type="video/quicktime" />
+                                <source src="/resurse/video/mp4/smartphone.mp4" type="video/mp4" />
+                                <track default src="/resurse/video/vtt/captions_ro.vtt" kind="captions" srclang="ro"
+                                    label="romana" />
+                                <track src="/resurse/video/vtt/captions_en.vtt" kind="captions" srclang="en"
+                                    label="engleza" />
+                                Browserul dumneavoastră nu suportă tagul video.
+                            </video>
+                        </div>
+                    </section>
+                    <section class="produse">
+                        <hr />
+                        <div class="telefoane">
+                            <div class="telefon">
+                                <img src="resurse/img/telefoane/iphone14.jpg" style="width: 100px;" alt="iPhone 14 Pro"
+                                    title="iPhone 14 Pro" />
+                                    <button class="btn btn-link">Telefon mobil Apple iPhone 14 Pro</button>
+                                <p>4999 lei</p>
+                                <button class="btn btn-primary">Adauga in cos</button>
+                            </div>
+                            <div class="telefon">
+                                <img src="resurse/img/telefoane/pixel7.jpg" style="width: 200px;" alt="Google Pixel 7"
+                                    title="Google Pixel 7" />
+                                    <button class="btn btn-link">Telefon mobil Google Pixel 7</button>
+                                <p>3499 lei</p>
+                                <button class="btn btn-primary">Adauga in cos</button>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section id="faq">
+                    <div class="section-title bg-primary bg-gradient">
+                        <h2>Întrebări frecvente</h2>
+                        <div class="bar"></div> <i class="fa-regular fa-circle-question"></i>
+                    </div>
+                    <details>
+                        <summary>Cum returnez un produs?</summary>
+                        <p>Veți trimite produsul prin serviciul de curierat, pe propria cheltuială. După ce QuickGSM
+                            primește
+                            produsul și verifică integritatea acestuia, clientul va primi banii înapoi în următoarele 30
+                            de zile
+                            lucrătoare</p>
+                    </details>
+                    <details>
+                        <summary>Pot cumpăra telefonul în rate?</summary>
+                        <p>Nu, QuickGSM nu are opțiunea de plată în rate a produselor, și nici nu oferă credite pentru
+                            clienți
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Îmi pot ridica singur produsele comandate?</summary>
+                        <p>Da, acestea pot fi ridicate și de la sediul nostru din București.</p>
+                    </details>
+                    <details>
+                        <summary>Ce pot face dacă produsul este deteriorat?</summary>
+                        <p>Vă rugăm să ne anunțați prin email cu detalii despre comandă și imagini care atestă
+                            deteriorarea.
+                            Ulterior vă rugăm să returnați produsul și vă vom compensa pierderea.</p>
+                    </details>
+                </section>
+            </div>
+            <section id="tabel">
+                <h2>Orarul nostru</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">
+                                    Locatia
+                                </th>
+                                <th rowspan="2">
+                                    Adresa
+                                </th>
+                                <th colspan="7">
+                                    Program de lucru saptamanal
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Luni</th>
+                                <th>Marti</th>
+                                <th>Miercuri</th>
+                                <th>Joi</th>
+                                <th>Vineri</th>
+                                <th>Sambata</th>
+                                <th>Duminica</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Bucuresti
+                                </td>
+                                <td>
+                                    Șoseaua Nicolae Titulescu Nr.3
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 14:00
+                                </td>
+                                <td>
+                                    10:00 - 14:00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Cluj-Napoca
+                                </td>
+                                <td>
+                                    Strada Alexandru Vaida Voievod Nr. 2
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 14:00
+                                </td>
+                                <td>
+                                    10:00 - 14:00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Iasi
+                                </td>
+                                <td>
+                                    Bulevardul 1 Decembrie 1918 Nr. 1
+                                </td>
+                                <td>
+                                    10:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 16:00
+                                </td>
+                                <td>
+                                    11:00 - 15:00
+                                </td>
+                                <td>
+                                    Inchis
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Timisoara
+                                </td>
+                                <td>
+                                    Calea Aradului Nr. 4
+                                </td>
+                                <td>
+                                    09:00 - 19:00
+                                </td>
+                                <td>
+                                    09:00 - 19:00
+                                </td>
+                                <td>
+                                    09:00 - 19:00
+                                </td>
+                                <td>
+                                    09:00 - 19:00
+                                </td>
+                                <td>
+                                    09:00 - 18:00
+                                </td>
+                                <td>
+                                    10:00 - 15:00
+                                </td>
+                                <td>
+                                    10:00 - 15:00
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="9">
+                                    Obs.: Programul de lucru poate varia in functie de evenimente speciale.
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <caption>Orarul nostru</caption>
+                    </table>
+                </div>
+            </section>
+            <section id="calendar">
+                <h2>Calendar</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu massa in tortor finibus venenatis
+                    eget aliquam ipsum. Aenean auctor, quam at tempor blandit, orci est rhoncus dolor, vitae consequat
+                    est magna a neque. Mauris sit amet fermentum tortor. Aliquam et justo sit amet ex pharetra accumsan.
+                    Praesent eu eros at felis lacinia gravida laoreet sit amet augue. Aliquam eget nisi vitae nisi
+                    aliquet lacinia ut eu nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                    inceptos himenaeos.</p>
+            </section>
+            <section id="anunturi">
+                <h2>Anunturi</h2>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur
+                    dapibus tellus non dapibus sagittis. Duis scelerisque nulla a est vulputate, at porttitor magna
+                    rhoncus. Ut condimentum pulvinar ante varius accumsan. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. In placerat, ante ut ultrices hendrerit, justo dui rutrum massa, auctor vehicula
+                    tortor felis pretium libero. Integer vitae semper nunc.</p>
+            </section>
+            <section id="users">
+                <h2>Users online</h2>
+                <p>Nulla cursus, ex vel lobortis mollis, urna urna imperdiet erat, dictum faucibus lacus elit sed arcu.
+                    Integer et varius enim, vel elementum est. Mauris a lacus tortor. Pellentesque eget felis et massa
+                    condimentum commodo. Quisque venenatis enim diam, in auctor diam luctus sed. Ut quis ante vel nisi
+                    tristique sollicitudin. Donec commodo eros non mollis faucibus.
+
+                </p>
+            </section>
+            <section id="userstats">
+                <h2>User</h2>
+
+                <div class="user-container">
+                    <img
+                        src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=Blue02&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Brown' />
+                    <div class="user-info">
+                        <p class="user-ip">
+                            Adresa Dvs. IP este: <%= user.ip %>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="serverinfo">
+                <h2>Server info</h2>
+                <p>Duis suscipit mollis nibh, non faucibus velit tristique et. In mollis urna et diam volutpat, sed
+                    ultrices sem efficitur. Integer sed sagittis eros. Curabitur feugiat molestie iaculis. Etiam
+                    vehicula sollicitudin volutpat. Sed ac odio sapien. In commodo lacinia feugiat. Aenean nisl lorem,
+                    tincidunt eu purus ac, posuere fringilla velit. Curabitur nec finibus risus. Nullam arcu dui,
+                    molestie et purus eget, venenatis tincidunt dui. Etiam placerat felis nisi, in ornare justo congue
+                    id. Duis dignissim, nibh non sodales elementum, nunc velit cursus ante, ac tincidunt nisi eros vel
+                    purus.
+
+                </p>
+            </section>
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

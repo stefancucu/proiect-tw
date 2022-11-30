@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    * {
+        margin: 0;
+    }
+    main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "z1 z1 z1 z1"
+                             "z8 z8 z8 z8"
+                             "z3 z2 z2 z4"
+                             "z5 z6 z7 z7";
+        @media screen and (min-width: 800px) and (max-width: 1400px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "z1 z1"
+                                 "z8 z8"
+                                 "z2 z2"
+                                 "z3 z4"
+                                 "z5 z6"
+                                 "z7 z7";
+        }
+        @media screen and (max-width: 800px) {
+            display: block;
+        }
+        font-size: 1em;
+        #welcome {
+            grid-area: z1;
+        }
+        
+        #diverse {
+            grid-area: z8;
+        }
+        
+        #tabel {
+            grid-area: z2;
+        }
+        
+        #calendar {
+            grid-area: z3;
+        }
+        
+        #anunturi {
+            grid-area: z4;
+        }
+        
+        #users {
+            grid-area: z5;
+        }
+        
+        #userstats {
+            grid-area: z6;
+        }
+        
+        #serverinfo {
+            grid-area: z7;
+        }  
+    }
+}
+
