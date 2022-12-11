@@ -1,0 +1,93 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.product-header {
+    @include flex(row, space-between, center);
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+        img {
+            border-right: 0px !important;
+            padding: 0;
+            margin-right: 0 !important;
+        }
+        div {
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+        }
+    }
+
+    img {
+        padding-right: 5px;
+        margin-right: 5px;
+    }
+
+    >div {
+        margin-left: 10px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--quinary);
+        padding: 20px;
+        p {
+            font-size: 1.2rem;
+        }
+
+        button {
+            margin-top: auto;
+        }
+
+        .are-date {
+            background-color: green;
+        }
+
+        @media screen and (max-width: 800px) {
+            height: 100%;
+            margin-left: 0;
+            margin-top: 10px;
+
+            button {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+body {
+    @include flex(column, space-between, normal);
+    height: 100vh;
+    margin: 0;
+
+    * {
+        margin: 0
+    }
+
+    main {
+        width: 100%;
+        @include flex(column, center, center);
+    }
+}
+
+.product-info {
+    width: 35%;
+    @media screen and (max-width: 800px) {
+        width: 100vw;
+    }
+    @media screen and (min-width: 800px) and (max-width: 1400px) {
+        width: 60%;
+    }
+    @media screen and (min-width: 1400px) and (max-width: 1700px) {
+        width: 45%;
+    }
+
+    div {
+        h3 {
+            width: 100%;
+            border-bottom: 1px solid var(--primary);
+        }
+    }
+}

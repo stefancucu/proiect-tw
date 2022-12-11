@@ -6,22 +6,27 @@
             <div class="hamburger-line"></div>
         </div>
     </div>
+    <i id="toggle-tema" class="fa-solid fa-sun"></i>
+    <div id="snow">
+        <div></div>
+    </div>
     <h1>QuickGSM</h1>
     <nav>
         <ul>
-            <li><a>Telefoane</a></li>
-            <li><a>Tablete</a></li>
-            <li><a>Accesorii</a></li>
-            <li><a href="/about">Despre noi</a></li>
-            <li><a>Cos</a></li>
             <li class="sublist">
-                <a href="/home"><i class="fa-solid fa-house"></i><p>Acasă</p></a>
-                <ul>    
-                    <li><a href="/#oferte">Oferte</a></li>
-                    <li><a href="/#noutati">Noutăți</a></li>
-                    <li><a href="/#faq">Întrebări frecvente</a></li>
+                <a href="/home"><i class="fa-solid fa-house"></i><p id="acasa">Acasă</p></a>
+            </li>
+            <li class="sublist" id="produse">
+                <a href="/produse"><p>Produse</p></a>
+                <ul>
+                    <% for (let i=0; i < tipuri.length; i++) { %>
+                        <li><a href="/produse?tip=<%= tipuri[i] %>"><%= tipuri[i] %></a></li>
+                    <% } %>
                 </ul>
             </li>
+            <li><a href="/galerie">Galerie</a></li>
+            <li><a href="/about">Despre noi</a></li>
+            <li><a>Cos</a></li>
         </ul>
     </nav>
 </header>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - Produse</title>
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <script src="/resurse/js/produse.js"></script>
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <div class="container-filtre" id="filtre">
+                <h2>Produse</h2>
+                <div class="nume">
+                    <label for="cautare-nume">Nume</label>
+                    <input type="textarea" id="cautare-nume" placeholder="Nume" />
+                </div>
+                <div class="pret">
+                    <label for="cautare-pret">Pret maxim</label>
+                    <div>
+                        <span id="pret-min">0</span>
+                        <input type="range" id="cautare-pret" min="0" max="10000" value="10000" />
+                        <span id="pret-max">10000</span>
+                    </div>
+                    <div id="pret-curent">Pret curent: 10000 RON</div>
+                </div>
+                <div class="tip">
+                    <label for="cautare-tipuri">Tip Produs</label>
+                    <% if (tip_selectat) { %>
+                        <input type="text" id="cautare-tipuri" list="cautare-tipuri-list"
+                            value="<%= tip_selectat %>" disabled/>
+                        <% } else { %>
+                            <input type="text" id="cautare-tipuri" list="cautare-tipuri-list"
+                                placeholder="Tip Produs" />
+                            <% } %>
+                                <datalist id="cautare-tipuri-list">
+                                    <option value="Telefon">Telefon</option>
+                                    <option value="Tableta">Tableta</option>
+                                    <option value="Accesorii">Accesorii</option>
+                                    <option value="Smartwatch">Smartwatch</option>
+                                    <option value="Laptop">Laptop</option>
+                                </datalist>
+                </div>
+                <fieldset class="date">
+                    <legend>Conectivitate 5G?:</legend>
+                    <div>
+                        <label for="cautare-date0">Da</label>
+                        <input type="radio" id="cautare-date0" name="cautare-date" value="da" />
+                        <label for="cautare-date1">Nu</label>
+                        <input type="radio" id="cautare-date1" name="cautare-date" value="nu" />
+                        <label for="cautare-date2">Oricare</label>
+                        <input type="radio" id="cautare-date2" name="cautare-date" value="oricare" checked />
+                    </div>
+                </fieldset>
+                <div class="noutati">
+                    <label for="cautare-noutati">Noutati?</label>
+                    <input type="checkbox" id="cautare-noutati" name="cautare-noutati" />
+                </div>
+                <div class="specs">
+                    <label for="cautare-specs">Specificatii</label>
+                    <input type="text" id="cautare-specs" placeholder="Specificatii" />
+                </div>
+                <div class="disponibilitate">
+                    <label for="cautare-disponibilitate">Disponibilitate</label>
+                    <select id="cautare-disponibilitate">
+                        <option value="oricare">Oricare</option>
+                        <option value="in stoc">In stoc</option>
+                        <option value="stoc furnizor">Stoc furnizor</option>
+                        <option value="precomanda">Precomanda</option>
+                        <option value="indisponibil">Indisponibil</option>
+                    </select>
+                </div>
+                <div class="producator">
+                    <label for="cautare-producator">Producator</label>
+                    <select id="cautare-producator" multiple>
+                        <option value="Apple">Apple</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Huawei">Huawei</option>
+                        <option value="Xiaomi">Xiaomi</option>
+                        <option value="Google">Google</option>
+                    </select>
+                </div>
+                <div class="container-btn">
+                    <button id="cautare-btn" class="btn btn-primary">Filtreaza</button>
+                    <button id="sortare-btn" class="btn btn-primary">Sorteaza ascendent</button>
+                    <button id="sortare-desc-btn" class="btn btn-primary">Sorteaza descendent</button>
+                    <button id="calculare-btn" class="btn btn-primary">Calculare medie pret</button>
+                    <button id="resetare-btn" class="btn btn-primary">Resetare</button>
+                </div>
+            </div>
+            <div class="container-produse">
+                <% for (let produs of produse) { %>
+                    <article id="artc-<%= produs.id %>" class="container-produs <%= produs.tip_produs %>"
+                        data-nume="<%= produs.nume %>" data-pret="<%= produs.pret %>"
+                        data-tip="<%= produs.tip_produs %>" data-date="<%= produs.date_5g %>"
+                        data-specs="<%= produs.specificatii %>" data-disponibilitate="<%= produs.disponibilitate %>"
+                        data-producator="<%= produs.producator %>" data-aparitie="<%= produs.data_aparitie %>"
+                        data-dimensiune="<%= produs.dimensiune %>">
+                        <h2>
+                            <%= produs.nume %>
+                        </h2>
+                        <div class="info">
+                            <div>
+                                <img src="<%= produs.img %>" />
+                                <p>
+                                    <b>Pret: </b>
+                                    <%= produs.pret %> RON
+                                </p>
+                                <p>
+                                    <b>Producator: </b>
+                                    <%= produs.producator %>
+                                </p>
+                                <p>
+                                    <b>Specificatii: </b>
+                                    <%= produs.specificatii%>
+                                </p>
+                                <p>
+                                    <b>Data aparitie: </b><time datetime="<%= produs.data_aparitie%>">
+                                        <%= new Date(produs.data_aparitie).toLocaleString('ro-RO', { weekday: 'long' ,
+                                            month: 'long' , day: 'numeric' , year: 'numeric' })%>
+                                    </time>
+                                </p>
+                                <p>
+                                    <b>Conectivitate 5G?: </b>
+                                    <%= produs.date_5g ? "Da" : "Nu" %>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <b>Tip produs: </b>
+                                    <%= produs.tip_produs.charAt(0).toUpperCase() + produs.tip_produs.slice(1) %>
+                                </p>
+                                <p>
+                                    <b>Descriere: </b>
+                                    <%= produs.descriere %>
+                                </p>
+                                <button class="btn btn-primary" onclick="window.location.href='/produse/<%= produs.id %>'">Detalii</button>
+                            </div>
+                        </div>
+                    </article>
+                    <% } %>
+            </div>
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

@@ -12,9 +12,16 @@ footer {
 footer address {
   margin-left: 10px;
   margin-bottom: 10px;
+  line-height: 9px !important;
 }
 footer address a {
   color: var(--quinary);
+}
+footer address p, footer address h2 {
+  margin-bottom: 9px;
+}
+footer address h2 {
+  font-size: inherit !important;
 }
 footer > div {
   height: 120px;

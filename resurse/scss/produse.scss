@@ -1,76 +1,272 @@
-@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-.produse {
+main {
     width: 100%;
-    @include flex(column, center, center);
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    .telefoane {
-        width: 100%;
-        @include flex(row, center, center);
-    }
-
-    &::before {
-        content: "";
-        height: 0;
-        width: 80%;
-        // border-top: 1px solid var(--quaternary);
-        margin-bottom: 20px;
-
-        @media screen and (max-width: 800px) {
-            width: 100%;
-        }
-    }
+    min-height: 1150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-.telefon {
-    @include flex(column, space-between, center);
-    margin: 0 20px;
-    width: 250px;
-    height: 365px;
-    text-align: center;
-    &:hover {
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+.container-filtre {
+    width: 90%;
+    display: grid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--quaternary);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "titlu titlu titlu"
+                        "nume pret tip"
+                        "5g noutati specs"
+                        "disponibilitate producator producator"
+                        "btn btn btn";
+    @media screen and (max-width: 1400px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "titlu titlu"
+                            "nume pret"
+                            "tip 5g"
+                            "noutati specs"
+                            "disponibilitate producator"
+                            "btn btn";
     }
-    img {
-        height: 200px;
-        width: auto;
-        margin-top: 10px;
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "titlu"
+                            "nume"
+                            "pret"
+                            "tip"
+                            "5g"
+                            "noutati"
+                            "specs"
+                            "disponibilitate"
+                            "producator"
+                            "btn";
     }
-    .btn-link {
-        font-weight: 700;
-        font-size: 1.1rem;
-        opacity: 0.8;
+    h2 {
+        grid-area: titlu;
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
-    p {
-        font-weight: 500;
-        font-size: 1.3rem;
-        s {
-            margin-right: 10px;
+    .nume {
+        grid-area: nume;
+        display: flex;
+        flex-direction: column;
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
         }
     }
-    
-    @media screen and (max-width: 1400px) {
-        .btn-link {
+    .pret {
+        grid-area: pret;
+        display: flex;
+        flex-direction: column;
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input {
+                padding: 10px;
+                border: 1px solid var(--quaternary);
+                border-radius: 5px;
+                width: 90%;
+                outline: none;
+                &:focus {
+                    border: 1px solid var(--primary);
+                }
+            }
+        }
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+    }
+    .tip {
+        grid-area: tip;
+        display: flex;
+        flex-direction: column;
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+    }
+    .date {
+        grid-area: 5g;
+        display: flex;
+        flex-direction: column;
+        legend {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+        > div > input {
+            margin-right: 10px;  
+        }
+        > div > label {
             font-size: 1rem;
         }
-        p {
-            font-size: 1.1rem;
+    }
+    .noutati {
+        grid-area: noutati;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        label {
+            font-size: 1.2rem;
+        }
+        input {
+            padding: 10px;
+            margin-top: 0.5rem;
+            margin-left: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
         }
     }
-
-    @media screen and (max-width: 800px) {
-        .btn-link {
-            font-size: 0.95rem;
+    .specs {
+        grid-area: specs;
+        display: flex;
+        flex-direction: column;
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
-        p {
-            font-size: 1.05rem;
+        input {
+            padding: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+    }
+    .disponibilitate {
+        grid-area: disponibilitate;
+        display: flex;
+        flex-direction: column;
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+    }
+    .producator {
+        grid-area: producator;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2px;
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid var(--quaternary);
+            border-radius: 5px;
+            outline: none;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+    }
+    .container-btn {
+        grid-area: btn;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @media screen and (max-width: 800px) {
+            display: block
+        }
+        button {
+            margin-top: 10px;
+        }
+    }
+}
+
+.container-produse {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    article {
+        width: 47%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 2%;
+        // margin-right: 1%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            // margin-left: 0 !important;
+            margin: auto !important;
+            margin-top: 30px;
+        }
+        img {
+            @media screen and (max-width: 1400px) {
+                width: 100%;
+            }
+        }
+        &.none {
+            display: none;
+        }
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        padding-left: 15px;
+    }
+    .info {
+        width: 100%;
+        height: calc(100% - 1.5rem - 10px);
+        display: flex;
+        flex-direction: row;
+        > div {
+            width: 50%;
+            padding: 10px;
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+                button {
+                    // justify-self: flex-end;
+                    margin-top: auto;
+                }
+            }
         }
     }
 }

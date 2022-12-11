@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - <%= produs.nume %></title>
+    <link rel="stylesheet" href="/resurse/css/produs.css" type="text/css" />
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <div>
+                <h2>
+                    <%= produs.nume %>
+                </h2>
+                <div class="product-header">
+                    <img src="<%= produs.img %>" alt="Imagine produs">
+                    <div>
+                        <p><b>Tip produs: </b><%= produs.tip_produs.charAt(0).toUpperCase() + produs.tip_produs.slice(1) %></p>
+                        <p><b>Pret: </b>
+                            <%= produs.pret %> RON
+                        </p>
+                        <p><b>Disponibilitate: </b>
+                            <%=produs.disponibilitate %>
+                        </p>
+                        <% if (produs.date_5g == 1) { %>
+                            <div class="alert alert-success">
+                                Gata pentru 5G!
+                            </div>
+                        <% } %>
+                        <button class="btn btn-primary">Adauga in cos</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="product-producator">
+                    <h3>Producator</h3>
+                    <p>
+                        <%= produs.producator %>
+                    </p>
+                </div>
+                <div class="product-description">
+                    <h3>Descriere</h3>
+                    <p>
+                        <%= produs.descriere %>
+                    </p>
+                </div>
+                <div class ="product-specifications">
+                    <h3>Specificatii</h3>
+                    <p>
+                        <%= produs.specificatii %>
+                    </p>
+                </div>
+                <div class="product-dimensiune">
+                    <h3>Dimensiuni</h3>
+                    <p>
+                        <%= produs.dimensiune %> inch
+                    </p>
+                </div>
+                <div class="product-data-aparitie">
+                    <h3>Data aparitie</h3>
+                    <time datetime="<%= produs.data_aparitie%>">
+                        <%= new Date(produs.data_aparitie).toLocaleString('ro-RO', { weekday: 'long' ,
+                            month: 'long' , day: 'numeric' , year: 'numeric' })%>
+                    </time>
+                </div>
+            </div>
+
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

@@ -16,9 +16,15 @@ footer {
   address {
     margin-left: 10px;
     margin-bottom: 10px;
-
+    line-height: 9px !important;
     a {
       color: var(--quinary);
+    }
+    p, h2 {
+      margin-bottom: 9px;
+    }
+    h2 {
+      font-size: inherit !important;
     }
   }
 

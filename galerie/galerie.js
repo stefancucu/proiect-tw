@@ -3,9 +3,9 @@ const path = require("path");
 const sharp = require("sharp");
 
 module.exports = async function fetchImages() {
-    const imgJson = JSON.parse(
-        fs.readFileSync(path.join(__dirname, "galerie.json"), "utf8")
-      );
+  const imgJson = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "galerie.json"), "utf8")
+    );
   let images = imgJson.imagini;
   let sfert_ora = Math.floor(new Date().getMinutes() / 15) + 1;
   images = images.filter((img) => img.sfert_ora == sfert_ora).slice(0, 10);

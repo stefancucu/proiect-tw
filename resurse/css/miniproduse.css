@@ -1,0 +1,75 @@
+.produse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.produse .telefoane {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.produse::before {
+  content: "";
+  height: 0;
+  width: 80%;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 800px) {
+  .produse::before {
+    width: 100%;
+  }
+}
+.produse .telefon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  width: 250px;
+  height: 365px;
+  text-align: center;
+}
+.produse .telefon:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.produse .telefon img {
+  height: 200px;
+  width: auto;
+  margin-top: 10px;
+}
+.produse .telefon .btn-link {
+  font-weight: 700;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+.produse .telefon p {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.produse .telefon p s {
+  margin-right: 10px;
+}
+@media screen and (max-width: 1400px) {
+  .produse .telefon .btn-link {
+    font-size: 1rem;
+  }
+  .produse .telefon p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .produse .telefon .btn-link {
+    font-size: 0.95rem;
+  }
+  .produse .telefon p {
+    font-size: 1.05rem;
+  }
+}
+
+/*# sourceMappingURL=miniproduse.css.map */

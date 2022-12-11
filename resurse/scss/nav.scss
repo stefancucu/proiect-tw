@@ -56,12 +56,8 @@ header {
       display: flex;
     }
   }
-  a {
-    // text-decoration: none;
-    // color: var(--tertiary);
-  }
   h1 {
-    color: var(--secondary);
+    color: var(--secondary) !important;
     flex-grow: 1;
     margin-left: 15vw;
     @media screen and (max-width: 800px) {
@@ -73,7 +69,7 @@ header {
     @media screen and (max-width: 800px) {
       display: none;
       margin-right: 0vw;
-      background-color: var(--primary);
+      background-color: var(--primary) !important;
       -webkit-mask-image: linear-gradient(to top, transparent, white 100%);
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-size: 100% 500%;
@@ -119,15 +115,15 @@ header {
         cursor: pointer;
       }
       a:hover {
-        color: var(--secondary);
+        color: var(--secondary) !important;
         transition: var(--timp-tranzitie-header);
       }
-
-      .sublist {
-        order: -1;
+      #produse {
         @media screen and (max-width: 800px) {
-          order: 0;
+          order: 3;
         }
+      }
+      .sublist {
         @include flex(column, flex-start, center);
         > a {
           @include flex(row, center, center);
@@ -135,12 +131,14 @@ header {
             margin-right: 5px;
           }
           > p {
-            opacity: 0;
             margin: 0;
+          }
+          > #acasa {
+            opacity: 0;
             transition: var(--timp-tranzitie-header);
           }
           @media screen and (max-width: 800px) {
-            > p {
+            > #acasa {
               display: none;
             }
             > i {
@@ -149,7 +147,7 @@ header {
           }
         }
         > &:hover {
-          > a > p {
+          > a > #acasa {
             opacity: 1;
             transition: var(--timp-tranzitie-header);
           }
@@ -159,7 +157,7 @@ header {
           padding: 0;
           list-style-type: none;
           display: none;
-          z-index: 100;
+          // z-index: 100;
 
           animation-name: animatie_submeniu;
           animation-duration: var(--timp-animatie-submeniu);
@@ -180,7 +178,7 @@ header {
               transition: var(--timp-tranzitie-header);
             }
             > a:hover {
-              color: var(--secondary);
+              color: var(--secondary) !important;
               transition: var(--timp-tranzitie-header);
             }
           }
@@ -194,6 +192,16 @@ header {
           }
         }
       }
+    }
+  }
+  > i {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+      top: 8px !important;
     }
   }
 }

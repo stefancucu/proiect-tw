@@ -1,76 +1,260 @@
-.produse {
+main {
   width: 100%;
+  min-height: 1150px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: 20px;
+}
+
+.container-filtre {
+  width: 90%;
+  display: grid;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--quaternary);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "titlu titlu titlu" "nume pret tip" "5g noutati specs" "disponibilitate producator producator" "btn btn btn";
+}
+@media screen and (max-width: 1400px) {
+  .container-filtre {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titlu titlu" "nume pret" "tip 5g" "noutati specs" "disponibilitate producator" "btn btn";
+  }
+}
+@media screen and (max-width: 800px) {
+  .container-filtre {
+    grid-template-columns: 1fr;
+    grid-template-areas: "titlu" "nume" "pret" "tip" "5g" "noutati" "specs" "disponibilitate" "producator" "btn";
+  }
+}
+.container-filtre h2 {
+  grid-area: titlu;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
-.produse .telefoane {
+.container-filtre .nume {
+  grid-area: nume;
+  display: flex;
+  flex-direction: column;
+}
+.container-filtre .nume label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .nume input {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .nume input:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .pret {
+  grid-area: pret;
+  display: flex;
+  flex-direction: column;
+}
+.container-filtre .pret div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-filtre .pret div input {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  width: 90%;
+  outline: none;
+}
+.container-filtre .pret div input:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .pret label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .tip {
+  grid-area: tip;
+  display: flex;
+  flex-direction: column;
+}
+.container-filtre .tip label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .tip input {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .tip input:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .date {
+  grid-area: 5g;
+  display: flex;
+  flex-direction: column;
+}
+.container-filtre .date legend {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .date select {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .date select:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .date > div > input {
+  margin-right: 10px;
+}
+.container-filtre .date > div > label {
+  font-size: 1rem;
+}
+.container-filtre .noutati {
+  grid-area: noutati;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.container-filtre .noutati label {
+  font-size: 1.2rem;
+}
+.container-filtre .noutati input {
+  padding: 10px;
+  margin-top: 0.5rem;
+  margin-left: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .noutati input:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .specs {
+  grid-area: specs;
+  display: flex;
+  flex-direction: column;
+}
+.container-filtre .specs label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .specs input {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .specs input:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .disponibilitate {
+  grid-area: disponibilitate;
+  display: flex;
+  flex-direction: column;
+}
+.container-filtre .disponibilitate label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .disponibilitate select {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .disponibilitate select:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .producator {
+  grid-area: producator;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2px;
+}
+.container-filtre .producator label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.container-filtre .producator select {
+  padding: 10px;
+  border: 1px solid var(--quaternary);
+  border-radius: 5px;
+  outline: none;
+}
+.container-filtre .producator select:focus {
+  border: 1px solid var(--primary);
+}
+.container-filtre .container-btn {
+  grid-area: btn;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .container-filtre .container-btn {
+    display: block;
+  }
+}
+.container-filtre .container-btn button {
+  margin-top: 10px;
+}
+
+.container-produse {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
-.produse::before {
-  content: "";
-  height: 0;
-  width: 80%;
-  margin-bottom: 20px;
+.container-produse article {
+  width: 47%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 2%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 @media screen and (max-width: 800px) {
-  .produse::before {
+  .container-produse article {
+    width: 100%;
+    margin: auto !important;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .container-produse article img {
     width: 100%;
   }
 }
-
-.telefon {
+.container-produse article.none {
+  display: none;
+}
+.container-produse h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+.container-produse .info {
+  width: 100%;
+  height: calc(100% - 1.5rem - 10px);
+  display: flex;
+  flex-direction: row;
+}
+.container-produse .info > div {
+  width: 50%;
+  padding: 10px;
+}
+.container-produse .info > div:last-child {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 20px;
-  width: 250px;
-  height: 365px;
-  text-align: center;
 }
-.telefon:hover {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-}
-.telefon img {
-  height: 200px;
-  width: auto;
-  margin-top: 10px;
-}
-.telefon .btn-link {
-  font-weight: 700;
-  font-size: 1.1rem;
-  opacity: 0.8;
-}
-.telefon p {
-  font-weight: 500;
-  font-size: 1.3rem;
-}
-.telefon p s {
-  margin-right: 10px;
-}
-@media screen and (max-width: 1400px) {
-  .telefon .btn-link {
-    font-size: 1rem;
-  }
-  .telefon p {
-    font-size: 1.1rem;
-  }
-}
-@media screen and (max-width: 800px) {
-  .telefon .btn-link {
-    font-size: 0.95rem;
-  }
-  .telefon p {
-    font-size: 1.05rem;
-  }
+.container-produse .info > div:last-child button {
+  margin-top: auto;
 }
 
 /*# sourceMappingURL=produse.css.map */

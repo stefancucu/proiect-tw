@@ -70,7 +70,7 @@ header {
   }
 }
 header h1 {
-  color: var(--secondary);
+  color: var(--secondary) !important;
   flex-grow: 1;
   margin-left: 15vw;
 }
@@ -92,7 +92,7 @@ header nav {
   header nav {
     display: none;
     margin-right: 0vw;
-    background-color: var(--primary);
+    background-color: var(--primary) !important;
     -webkit-mask-image: linear-gradient(to top, transparent, white 100%);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 500%;
@@ -143,20 +143,19 @@ header nav > ul a {
   cursor: pointer;
 }
 header nav > ul a:hover {
-  color: var(--secondary);
+  color: var(--secondary) !important;
   transition: var(--timp-tranzitie-header);
 }
+@media screen and (max-width: 800px) {
+  header nav > ul #produse {
+    order: 3;
+  }
+}
 header nav > ul .sublist {
-  order: -1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-@media screen and (max-width: 800px) {
-  header nav > ul .sublist {
-    order: 0;
-  }
 }
 header nav > ul .sublist > a {
   display: flex;
@@ -168,19 +167,21 @@ header nav > ul .sublist > a > i {
   margin-right: 5px;
 }
 header nav > ul .sublist > a > p {
-  opacity: 0;
   margin: 0;
+}
+header nav > ul .sublist > a > #acasa {
+  opacity: 0;
   transition: var(--timp-tranzitie-header);
 }
 @media screen and (max-width: 800px) {
-  header nav > ul .sublist > a > p {
+  header nav > ul .sublist > a > #acasa {
     display: none;
   }
   header nav > ul .sublist > a > i {
     margin: 0;
   }
 }
-header nav > ul .sublist:hover > a > p {
+header nav > ul .sublist:hover > a > #acasa {
   opacity: 1;
   transition: var(--timp-tranzitie-header);
 }
@@ -192,7 +193,6 @@ header nav > ul .sublist ul {
   padding: 0;
   list-style-type: none;
   display: none;
-  z-index: 100;
   animation-name: animatie_submeniu;
   animation-duration: var(--timp-animatie-submeniu);
   animation-iteration-count: 1;
@@ -216,7 +216,7 @@ header nav > ul .sublist ul li > a {
   transition: var(--timp-tranzitie-header);
 }
 header nav > ul .sublist ul li > a:hover {
-  color: var(--secondary);
+  color: var(--secondary) !important;
   transition: var(--timp-tranzitie-header);
 }
 header nav > ul .sublist ul :last-child {
@@ -224,6 +224,17 @@ header nav > ul .sublist ul :last-child {
 }
 header nav > ul .sublist:hover ul {
   display: block;
+}
+header > i {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  header > i {
+    top: 8px !important;
+  }
 }
 
 @keyframes animatie_submeniu {
