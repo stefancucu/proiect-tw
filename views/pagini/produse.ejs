@@ -15,22 +15,22 @@
 <body>
     <%- include("../fragmente/header.ejs") %>
         <main>
-            <div class="container-filtre" id="filtre">
-                <h2>Produse</h2>
-                <div class="nume">
+            <div class="container-filtre row row-cols-3" id="filtre">
+                <h2 class="col-12">Produse</h2>
+                <div class="nume form-floating col-12 col-md-4">
+                    <input type="textarea" class="form-control" id="cautare-nume" placeholder="Nume" />
                     <label for="cautare-nume">Nume</label>
-                    <input type="textarea" id="cautare-nume" placeholder="Nume" />
                 </div>
-                <div class="pret">
+                <div class="pret col-12 col-md-4">
                     <label for="cautare-pret">Pret maxim</label>
                     <div>
                         <span id="pret-min">0</span>
-                        <input type="range" id="cautare-pret" min="0" max="10000" value="10000" />
+                        <input type="range" id="cautare-pret" class="form-range" min="0" max="10000" value="10000" />
                         <span id="pret-max">10000</span>
                     </div>
                     <div id="pret-curent">Pret curent: 10000 RON</div>
                 </div>
-                <div class="tip">
+                <div class="tip col-12 col-md-4">
                     <label for="cautare-tipuri">Tip Produs</label>
                     <% if (tip_selectat) { %>
                         <input type="text" id="cautare-tipuri" list="cautare-tipuri-list"
@@ -47,7 +47,7 @@
                                     <option value="Laptop">Laptop</option>
                                 </datalist>
                 </div>
-                <fieldset class="date">
+                <fieldset class="date col-6 col-md-4">
                     <legend>Conectivitate 5G?:</legend>
                     <div>
                         <label for="cautare-date0">Da</label>
@@ -58,15 +58,15 @@
                         <input type="radio" id="cautare-date2" name="cautare-date" value="oricare" checked />
                     </div>
                 </fieldset>
-                <div class="noutati">
-                    <label for="cautare-noutati">Noutati?</label>
-                    <input type="checkbox" id="cautare-noutati" name="cautare-noutati" />
+                <div class="noutati col-6 col-md-4">
+                    <input type="checkbox" class="btn-check" id="cautare-noutati" name="cautare-noutati" autocomplete="off">
+                    <label class="btn btn-outline-primary"  for="cautare-noutati">Noutati?</label><br>
                 </div>
-                <div class="specs">
+                <div class="specs col-12 col-md-4">
                     <label for="cautare-specs">Specificatii</label>
                     <input type="text" id="cautare-specs" placeholder="Specificatii" />
                 </div>
-                <div class="disponibilitate">
+                <div class="disponibilitate col-12 col-md-4">
                     <label for="cautare-disponibilitate">Disponibilitate</label>
                     <select id="cautare-disponibilitate">
                         <option value="oricare">Oricare</option>
@@ -76,7 +76,7 @@
                         <option value="indisponibil">Indisponibil</option>
                     </select>
                 </div>
-                <div class="producator">
+                <div class="producator col-12 col-md-8">
                     <label for="cautare-producator">Producator</label>
                     <select id="cautare-producator" multiple>
                         <option value="Apple">Apple</option>
@@ -86,12 +86,12 @@
                         <option value="Google">Google</option>
                     </select>
                 </div>
-                <div class="container-btn">
-                    <button id="cautare-btn" class="btn btn-primary">Filtreaza</button>
-                    <button id="sortare-btn" class="btn btn-primary">Sorteaza ascendent</button>
-                    <button id="sortare-desc-btn" class="btn btn-primary">Sorteaza descendent</button>
-                    <button id="calculare-btn" class="btn btn-primary">Calculare medie pret</button>
-                    <button id="resetare-btn" class="btn btn-primary">Resetare</button>
+                <div class="container-btn col-12">
+                    <button id="cautare-btn" class="btn btn-primary"><i class="bi bi-funnel"></i><p>Filtreaza</p></button>
+                    <button id="sortare-btn" class="btn btn-primary"><i class="bi bi-sort-alpha-up"></i><p>Sorteaza ascendent</p></button>
+                    <button id="sortare-desc-btn" class="btn btn-primary"><i class="bi bi-sort-alpha-down"></i><p>Sorteaza descendent</p></button>
+                    <button id="calculare-btn" class="btn btn-primary"><i class="bi bi-calculator"></i><p>Calculare medie pret</p></button>
+                    <button id="resetare-btn" class="btn btn-primary"><i class="bi bi-arrow-counterclockwise"></i><p>Resetare</p></button>
                 </div>
             </div>
             <div class="container-produse">
@@ -135,6 +135,10 @@
                                 <p>
                                     <b>Tip produs: </b>
                                     <%= produs.tip_produs.charAt(0).toUpperCase() + produs.tip_produs.slice(1) %>
+                                </p>
+                                <p>
+                                    <b>Dimensiune: </b>
+                                    <%= produs.dimensiune %> inch
                                 </p>
                                 <p>
                                     <b>Descriere: </b>

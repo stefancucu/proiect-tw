@@ -30,6 +30,7 @@ body {
 body.dark {
     --primary: #091421;
     --secondary: #f3c97d;
+    --secondaryShade: #F0BB5D;
     --tertiary: #FAFAFA;
     --quaternary: #0b1e30;
     --quinary: #141618;
@@ -93,12 +94,12 @@ body.dark {
         --bs-btn-bg: var(--secondary);
         --bs-btn-border-color: var(--secondary);
         --bs-btn-hover-color: #000;
-        --bs-btn-hover-bg: #F0BB5D;
-        --bs-btn-hover-border-color: #F0BB5D;
+        --bs-btn-hover-bg: var(--secondaryShade);
+        --bs-btn-hover-border-color: var(--secondaryShade);
         --bs-btn-focus-shadow-rgb: 78, 123, 177;
         --bs-btn-active-color: black;
-        --bs-btn-active-bg: #F0BB5D;
-        --bs-btn-active-border-color: #F0BB5D;
+        --bs-btn-active-bg: var(--secondaryShade);
+        --bs-btn-active-border-color: var(--secondaryShade);
         --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
         --bs-btn-disabled-color: #000;
         --bs-btn-disabled-bg: var(--secondary);
@@ -110,6 +111,8 @@ body.dark {
 body.craciun {
     --primary: #034F1B;
     --secondary: #BD3634;
+    --secondaryShade1: #aa312f;
+    --secondaryShade2: #972b2a;
     --tertiary: #f2d7d6;
     --quaternary: #357249;
     --quinary: #689576;
@@ -194,12 +197,12 @@ body.craciun {
         --bs-btn-bg: var(--secondary);
         --bs-btn-border-color: var(--secondary);
         --bs-btn-hover-color: #fff;
-        --bs-btn-hover-bg: #aa312f;
-        --bs-btn-hover-border-color: #aa312f;
+        --bs-btn-hover-bg: var(--secondaryShade1);
+        --bs-btn-hover-border-color: var(--secondaryShade1);
         --bs-btn-focus-shadow-rgb: 78, 123, 177;
         --bs-btn-active-color: #fff;
-        --bs-btn-active-bg: #972b2a;
-        --bs-btn-active-border-color: #972b2a;
+        --bs-btn-active-bg: var(--secondaryShade2);
+        --bs-btn-active-border-color: var(--secondaryShade2);
         --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
         --bs-btn-disabled-color: #fff;
         --bs-btn-disabled-bg: var(--secondary);

@@ -14,19 +14,26 @@
     <nav>
         <ul>
             <li class="sublist">
-                <a href="/home"><i class="fa-solid fa-house"></i><p id="acasa">Acasă</p></a>
+                <a href="/home"><i id="pag-acasa" class="fa-solid fa-house"></i><p id="acasa">Acasă</p></a>
             </li>
             <li class="sublist" id="produse">
-                <a href="/produse"><p>Produse</p></a>
+                <a href="/produse"><p id="pag-produse">Produse</p></a>
                 <ul>
                     <% for (let i=0; i < tipuri.length; i++) { %>
                         <li><a href="/produse?tip=<%= tipuri[i] %>"><%= tipuri[i] %></a></li>
                     <% } %>
                 </ul>
             </li>
-            <li><a href="/galerie">Galerie</a></li>
-            <li><a href="/about">Despre noi</a></li>
+            <li><a href="/galerie" id="pag-galerie">Galerie</a></li>
+            <li><a href="/about" id="pag-about">Despre noi</a></li>
             <li><a>Cos</a></li>
         </ul>
     </nav>
 </header>
+<div class="banner" id="cookiebanner">
+    <p><b>Acesta este un proiect scolar!</b></p>
+    <div>
+        <p>Acceptati cookies?</p>
+        <button id='cookiebtn' class="btn btn-primary">Ok</button>
+    </div>
+</div>

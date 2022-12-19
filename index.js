@@ -5,7 +5,7 @@ let mysql = require("mysql");
 const app = express();
 const renderError = require("./erori/erori.js");
 const fetchImages = require("./galerie/galerie.js");
-const { capitalizeFirstLetter } = require("./utils");
+const { capitalizeFirstLetter, chooseRandomValues } = require("./utils");
 
 let connection = mysql.createConnection({
   host: "localhost",
@@ -21,6 +21,13 @@ console.log("Cale proiect", __dirname);
 
 app.use("/resurse", express.static(__dirname + "/resurse"));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
+
+app.get("/carousel", (req, res) => {
+  connection.query("SELECT * FROM produse", (error, results) => {
+    if (error) throw error;
+    res.json(chooseRandomValues(results, 5));
+  });
+})
 
 app.get("/produse", (req, res) => {
   console.log("Userul a cerut pagina: ", "/produse");

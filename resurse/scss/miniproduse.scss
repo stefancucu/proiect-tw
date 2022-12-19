@@ -5,6 +5,13 @@
     align-items: $align;
 }
 
+.carusel {
+    max-width: 90%;
+    // @include flex(column, center, center);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .produse {
     width: 100%;
     @include flex(column, center, center);

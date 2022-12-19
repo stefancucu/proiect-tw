@@ -8,46 +8,33 @@ main {
 
 .container-filtre {
   width: 90%;
-  display: grid;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--quaternary);
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "titlu titlu titlu" "nume pret tip" "5g noutati specs" "disponibilitate producator producator" "btn btn btn";
-}
-@media screen and (max-width: 1400px) {
-  .container-filtre {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "titlu titlu" "nume pret" "tip 5g" "noutati specs" "disponibilitate producator" "btn btn";
-  }
-}
-@media screen and (max-width: 800px) {
-  .container-filtre {
-    grid-template-columns: 1fr;
-    grid-template-areas: "titlu" "nume" "pret" "tip" "5g" "noutati" "specs" "disponibilitate" "producator" "btn";
-  }
 }
 .container-filtre h2 {
   grid-area: titlu;
   font-size: 2rem;
   margin-bottom: 20px;
 }
-.container-filtre .nume {
-  grid-area: nume;
+.container-filtre button {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.container-filtre button > p {
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  .container-filtre button > p {
+    display: none;
+  }
+}
+.container-filtre .nume {
+  padding-top: 30px;
 }
 .container-filtre .nume label {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-.container-filtre .nume input {
-  padding: 10px;
-  border: 1px solid var(--quaternary);
-  border-radius: 5px;
-  outline: none;
-}
-.container-filtre .nume input:focus {
-  border: 1px solid var(--primary);
+  margin-top: 30px;
 }
 .container-filtre .pret {
   grid-area: pret;
@@ -62,8 +49,6 @@ main {
 }
 .container-filtre .pret div input {
   padding: 10px;
-  border: 1px solid var(--quaternary);
-  border-radius: 5px;
   width: 90%;
   outline: none;
 }
@@ -120,21 +105,8 @@ main {
   grid-area: noutati;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-}
-.container-filtre .noutati label {
-  font-size: 1.2rem;
-}
-.container-filtre .noutati input {
-  padding: 10px;
-  margin-top: 0.5rem;
-  margin-left: 10px;
-  border: 1px solid var(--quaternary);
-  border-radius: 5px;
-  outline: none;
-}
-.container-filtre .noutati input:focus {
-  border: 1px solid var(--primary);
+  align-items: center;
+  justify-content: center;
 }
 .container-filtre .specs {
   grid-area: specs;
@@ -196,11 +168,6 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-@media screen and (max-width: 800px) {
-  .container-filtre .container-btn {
-    display: block;
-  }
 }
 .container-filtre .container-btn button {
   margin-top: 10px;
