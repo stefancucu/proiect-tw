@@ -8,9 +8,10 @@ const erori = JSON.parse(
 module.exports = function renderError(
   res,
   identificator,
+  tipuri = [],
   titlu,
   text,
-  imagine
+  imagine,
 ) {
   var eroare = erori.info_erori.find(function (elem) {
     return elem.identificator == identificator;
@@ -27,6 +28,7 @@ module.exports = function renderError(
       text: text,
       imagine: imagine,
       status: identificator,
+      tipuri: tipuri,
     });
   } else {
     res.render("pagini/eroare", {
@@ -34,6 +36,7 @@ module.exports = function renderError(
       text: text,
       imagine: imagine,
       status: identificator,
+      tipuri: tipuri,
     });
   }
 };

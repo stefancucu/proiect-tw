@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - signup</title>
+    <link rel="stylesheet" href="/resurse/css/produs.css" type="text/css" />
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <script src="/resurse/js/signup.js"></script>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <h2>Signup</h2>
+            <form action="signup" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nume">Nume:</label>
+                    <input type="text" class="form-control" id="nume" name="nume" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenume">Prenume:</label>
+                    <input type="text" class="form-control" id="prenume" name="prenume" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username"
+                     <% if (locals.sugestii) { %>
+                     list="sugestii"
+                     <% } %> 
+                     required>
+                     <% if (locals.sugestii) { %>       
+                    <datalist id="sugestii">
+                        <% for (let sugestie of sugestii) { %>
+                            <option value="<%= sugestie %>"><%= sugestie %></option>
+                        <% } %> 
+                    </datalist>
+                    <% } %> 
+                </div>
+
+                <div class="form-group">
+                    <label for="parola">Parolă:</label>
+                    <input type="password" class="form-control" id="parola" name="parola" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reintroducere_parola">Reintroducere parolă:</label>
+                    <input type="password" class="form-control" id="reintroducere_parola" name="reintroducere_parola"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="data_nasterii">Data nașterii:</label>
+                    <input type="date" class="form-control" id="data_nasterii" name="data_nasterii">
+                </div>
+
+                <div class="form-group">
+                    <label for="culoare_chat">Culoare chat:</label>
+                    <input type="color" class="form-control" id="culoare_chat" name="culoare_chat">
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon:</label>
+                    <input type="tel" class="form-control" id="telefon" name="telefon">
+                </div>
+                <div class="form-group">
+                    <label for="fotografie">Fotografie:</label>
+                    <input type="file" class="form-control-file" id="fotografie" name="fotografie">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Trimite</button>
+            </form>
+            <% if (locals.ok) { %>
+                <div class="alert alert-success" id="alert" role="alert">
+                    <% if (locals.err) { %>
+                        <p id="pmsg">
+                            <%= err %>
+                        </p>
+                        <% } else { %>
+                            <p id="pmsg"></p>
+                            <% } %>
+                </div>
+                <% } else { %>
+                    <div class="alert alert-danger" id="alert" role="alert">
+                        <% if (locals.err) { %>
+                            <p id="pmsg">
+                                <%= err %>
+                            </p>
+                            <% } else { %>
+                                <p id="pmsg"></p>
+                                <% } %>
+                    </div>
+                 <% } %>
+
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

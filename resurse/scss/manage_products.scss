@@ -1,0 +1,28 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body {
+    @include flex(column, space-between, normal);
+    height: 100vh;
+    margin: 0;
+
+    * {
+        margin: 0
+    }
+
+    main {
+        width: 100%;
+        @include flex(column, center, center);
+    }
+}
+
+form {
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

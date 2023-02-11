@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - administrare</title>
+    <link rel="stylesheet" href="/resurse/css/manage_products.css" type="text/css" />
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <script src="/resurse/js/manage_products.js"></script>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <h2>Adauga un nou produs</h2>
+            <form action="/manage_products" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="id">Id produs:</label>
+                    <input type="number" class="form-control" id="id" name="id" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nume">Nume produs:</label>
+                    <input type="text" class="form-control" id="nume" name="nume" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dimensiune">Dimensiune:</label>
+                    <input type="text" class="form-control" id="dimensiune" name="dimensiune">
+                </div>
+
+                <div class="form-group">
+                    <label for="img">Imagine:</label>
+                    <input type="file" class="form-control-file" id="img" name="img" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tip_produs">Tip produs:</label>
+                    <select class="form-control" id="tip_produs" name="tip_produs" required>
+                        <option value="telefon">Telefon</option>
+                        <option value="tableta">Tableta</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="smartwatch">Smartwatch</option>
+                        <option value="accesorii">Accesorii</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="disponibilitate">Disponibilitate:</label>
+                    <select class="form-control" id="disponibilitate" name="disponibilitate" required>
+                        <option value="in stoc">În stoc</option>
+                        <option value="stoc furnizor">Stoc furnizor</option>
+                        <option value="precomanda">Precomandă</option>
+                        <option value="indisponibil">Indisponibil</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pret">Preț:</label>
+                    <input type="text" class="form-control" id="pret" name="pret" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="data_aparitie">Data apariție:</label>
+                    <input type="date" class="form-control" id="data_aparitie" name="data_aparitie" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="producator">Producător:</label>
+                    <input type="text" class="form-control" id="producator" name="producator" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="specificatii">Specificații:</label>
+                    <textarea class="form-control" id="specificatii" name="specificatii" rows="3" required></textarea>
+
+                </div>
+                <div class="form-group">
+                    <label for="date_5g">Are 5G:</label>
+                    <select class="form-control" id="date_5g" name="date_5g" required>
+                        <option value="0">Nu</option>
+                        <option value="1">Da</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descriere">Descriere:</label>
+                    <textarea class="form-control" id="descriere" name="descriere" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Adaugă produs</button>
+            </form>
+            <% if (locals.ok) { %>
+                <div class="alert alert-success" id="alert" role="alert">
+                    <% if (locals.err) { %>
+                        <p id="pmsg">
+                            <%= err %>
+                        </p>
+                        <% } else { %>
+                            <p id="pmsg"></p>
+                            <% } %>
+                </div>
+                <% } else { %>
+                    <div class="alert alert-danger" id="alert" role="alert">
+                        <% if (locals.err) { %>
+                            <p id="pmsg">
+                                <%= err %>
+                            </p>
+                            <% } else { %>
+                                <p id="pmsg"></p>
+                                <% } %>
+                    </div>
+                 <% } %>
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

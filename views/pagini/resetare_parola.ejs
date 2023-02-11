@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - users</title>
+    <link rel="stylesheet" href="/resurse/css/cerere_reset.css" type="text/css" />
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <script src="/resurse/js/resetare_parola.js"></script>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <h2>Resetare parola</h2>
+            <div>
+                <div class="form-group">
+                    <label for="parola">Parolă:</label>
+                    <input type="password" class="form-control" id="parola" name="parola" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reintroducere_parola">Reintroducere parolă:</label>
+                    <input type="password" class="form-control" id="reintroducere_parola" name="reintroducere_parola"
+                        required>
+                </div>
+                
+                <button id="submit" class="btn btn-primary">Reseteaza parola</button>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

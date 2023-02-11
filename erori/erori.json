@@ -19,6 +19,13 @@
             "titlu":"403 - Interzis",
             "text": "Nu aveți permisiunea de a accesa pagina",
             "imagine":"forbidden.svg"
+        },
+        {
+            "identificator":503,
+            "status":true,
+            "titlu":"503 - In mentenanta",
+            "text": "Site-ul se afla in mentenanta! Va rugam reveniti mai tarziu",
+            "imagine":"forbidden.svg"
         }
     ]
 }

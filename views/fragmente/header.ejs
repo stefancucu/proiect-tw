@@ -27,13 +27,48 @@
             <li><a href="/galerie" id="pag-galerie">Galerie</a></li>
             <li><a href="/about" id="pag-about">Despre noi</a></li>
             <li><a>Cos</a></li>
+            <% if(locals.role === 'admin') { %>
+                <li><a href="/users">Utilizatori</a></li>
+            <% } %>
         </ul>
     </nav>
+    <form action="login" method="post">
+        <% if(!locals.username) { %>
+        <div class="inputs">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username-login" name="username" required>
+            </div>
+            <div>
+                <label for="parola">Parolă:</label>
+                <input type="password" class="form-control" id="parola-login" name="parola" required>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-secondary">Login</button>
+            <a href="/signup">Creati un cont</a>
+            <a href="/cerere_reset">Resetare parola</a>
+        </div>
+        <% } else { %>
+        <div id="logat">
+            <p>Logat: <%= locals.username %></p>
+            <a href="/logout">Delogare</a>
+        </div>
+        <% } %>
+    </form>
 </header>
 <div class="banner" id="cookiebanner">
-    <p><b>Acesta este un proiect scolar!</b></p>
     <div>
-        <p>Acceptati cookies?</p>
-        <button id='cookiebtn' class="btn btn-primary">Ok</button>
+        <p><b>Acesta este un proiect scolar!</b></p>
+        <div>
+            <p>Acceptati cookies?</p>
+            <button id='cookiebtn' class="btn btn-primary">Ok</button>
+        </div>
     </div>
 </div>
+
+<% if(locals.loginMsg) { %>
+    <script>
+        alert("<%= locals.loginMsg %>")
+    </script>
+<% } %>   

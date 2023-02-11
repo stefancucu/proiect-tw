@@ -1,43 +1,57 @@
 .banner {
-    width: 350px;
-    height: 100px;
-    background-color: var(--quinary);
-    z-index: 100000;
+  width: 100vw;
+  height: 100px;
+  background-color: var(--quinary);
+  z-index: 100000;
 
-    position: fixed;
-    right: calc(50vw - 175px);
+  position: fixed;
+
+  border: 2px solid var(--primary);
+
+  animation-name: animatie_cookies;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > div {
+    width: 300px;
+    height: 100%;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 10px;
 
-    border: 2px solid var(--primary);
-
-    animation-name: animatie_cookies;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    > p {
+      text-align: center;
+    }
 
     > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        margin-bottom: 0;
+      }
     }
+  }
 }
 
 @keyframes animatie_cookies {
-    0% {
-      top: calc(100vh + 150px);
-    }
-    45% {
-      top: 20px;
-    }
-    55% {
-        top: 20px;
-    }
-    100% {
-     top: calc(100vh - 105px);
-     color: var(--primary);
-    }
+  0% {
+    top: calc(100vh + 150px);
   }
+  45% {
+    top: 20px;
+  }
+  55% {
+    top: 20px;
+  }
+  100% {
+    top: calc(100vh - 105px);
+    color: var(--primary);
+  }
+}

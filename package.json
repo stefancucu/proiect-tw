@@ -33,7 +33,16 @@
     "bootstrap": "^5.2.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "formidable": "^2.1.1",
     "fs": "^0.0.1-security",
-    "sharp": "^0.31.2"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.1.2",
+    "nodemailer": "^6.9.1",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0",
+    "sharp": "^0.31.2",
+    "unique-username-generator": "^1.1.3"
   }
 }

@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: normal;
+  height: 100vh;
+  margin: 0;
+}
+body * {
+  margin: 0;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/*# sourceMappingURL=manage_products.css.map */

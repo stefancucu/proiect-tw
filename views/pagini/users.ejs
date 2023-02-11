@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>QuickGSM - users</title>
+    <link rel="stylesheet" href="/resurse/css/users.css" type="text/css" />
+    <meta name="keywords"
+        content="telefoane, accesorii, magazin, GSM, QuickGSM, ieftin, iPhone, Samsung, Huawei, Xiaomi">
+    <meta name="description"
+        content="QuickGSM - Magazin GSM online cu o gama ampla de telefoane mobile, smartphone-uri si accesorii, cu cele mai ieftine preturi!">
+    <script src="/resurse/js/users.js"></script>
+    <%- include("../fragmente/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+        <main>
+            <div>
+                <button class="btn btn-primary"><a href="/manage_products">Administrare</a></button>
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Nume</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i=0; i < locals.users.length; i++) { %>
+                        <tr class="data-row">
+                            <th scope="row">
+                                <%= i+1 %>
+                            </th>
+                            <td>
+                                <%= locals.users[i].username %>
+                            </td>
+                            <td>
+                                <%= locals.users[i].nume %>
+                            </td>
+                            <td>
+                                <%= locals.users[i].rol %>
+                            </td>
+                            <td class="button-cell"><button info-btn="<%= locals.users[i].username %>"
+                                    class="btn btn-primary <%= locals.users[i].rol === 'comun' ? 'promote':'downgrade' %>">
+                                    <%= locals.users[i].rol==='comun' ? 'Promoveaza' :'Retrogradeaza' %>
+                                </button></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <div class="pag">
+                <button id="back" class="btn btn-link">&lt;</button>
+                <input length_users="<%= locals.users.length %>" id="page_input" type="number" min="1" readonly>
+                <button id="next" class="btn btn-link">&gt;</button>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body {
+    @include flex(column, space-between, normal);
+    height: 100vh;
+    margin: 0;
+
+    * {
+        margin: 0
+    }
+
+    main {
+        width: 100%;
+        @include flex(column, center, center);
+        .pag {
+            @include flex(row, center, center);
+        }
+    }
+}
+a {
+    color: var(--tertiary) !important;
+}
+table {
+    margin-top: 10px;
+    width: 70% !important;
+    .button-cell {
+        @include flex(column, center, center);
+    }
+}

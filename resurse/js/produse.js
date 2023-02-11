@@ -1,38 +1,38 @@
 window.addEventListener("load", function () {
-  // Set last values 
-  if(checkIfCookieExists('filters')) {
-    console.log(getCookie('filters'))
-    let vars = JSON.parse(getCookie('filters'));
-    if(vars == null) {
-        console.error('Nasol')
-        return;
+  // Set last values
+  if (checkIfCookieExists("filters")) {
+    console.log(getCookie("filters"));
+    let vars = JSON.parse(getCookie("filters"));
+    if (vars == null) {
+      console.error("Nasol");
+      return;
     }
-    console.log(vars)
-    document.getElementById("cautare-nume").value = vars.nume
-    document.getElementById("cautare-pret").value = vars.pret
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(vars);
+    document.getElementById("cautare-nume").value = vars.nume;
+    document.getElementById("cautare-pret").value = vars.pret;
     document.getElementById("pret-curent").innerHTML =
       "Pret curent: " + vars.pret + " RON";
-    document.getElementById("cautare-tipuri").value = vars.tip
+    console.log(urlParams.get('tip'))
+    if(urlParams.get('tip') == null){
+      document.getElementById("cautare-tipuri").value = vars.tip;
+    }
     let date = document.getElementsByName("cautare-date");
-    if(vars.date == true)
-        date[0].checked = true;
-    else if(vars.date == false)
-        date[1].checked = true;
-    else
-        date[2].checked = true;
+    if (vars.date == true) date[0].checked = true;
+    else if (vars.date == false) date[1].checked = true;
+    else date[2].checked = true;
     document.getElementById("cautare-noutati").checked = vars.noutati;
     document.getElementById("cautare-specs").value = vars.specificatii;
-    document.getElementById(
-        "cautare-disponibilitate"
-      ).value = vars.disponibilitate;
-    let prods = document.getElementById("cautare-producator")
+    document.getElementById("cautare-disponibilitate").value =
+      vars.disponibilitate;
+    let prods = document.getElementById("cautare-producator");
     console.log(prods);
     console.log(vars.producator);
-    for(let i = 0; i < vars.producator.length; i++) {
-        let values = Array.from(prods.options).map(option => option.value);
-        console.log(values.indexOf(vars.producator[i]))
-        
-        prods[values.indexOf(vars.producator[i])].selected = true;
+    for (let i = 0; i < vars.producator.length; i++) {
+      let values = Array.from(prods.options).map((option) => option.value);
+      console.log(values.indexOf(vars.producator[i]));
+
+      prods[values.indexOf(vars.producator[i])].selected = true;
     }
   }
   // Onchange
@@ -41,6 +41,7 @@ window.addEventListener("load", function () {
     // set #pret-curent to value
     document.getElementById("pret-curent").innerHTML =
       "Pret curent: " + pret_input.value + " RON";
+    filter();
   };
   // Get variables
   function getVars() {
@@ -49,8 +50,8 @@ window.addEventListener("load", function () {
     // nume
     let nume = document.getElementById("cautare-nume").value;
     if (checkNumericChars(nume)) {
-        inputElement.classList.add('is-invalid');
-        throw "Prea multe numere in nume!";
+      inputElement.classList.add("is-invalid");
+      throw "Prea multe numere in nume!";
     }
     // pret
     let pret = document.getElementById("cautare-pret").value;
@@ -101,8 +102,8 @@ window.addEventListener("load", function () {
     vars.disponibilitate = disponibilitate;
     vars.producator = producator_value;
     // Set values to cookies for later user
-    if(checkIfCookieExists('accept-cookies')) 
-        addCookie('filters', JSON.stringify(vars));
+    if (checkIfCookieExists("accept-cookies"))
+      addCookie("filters", JSON.stringify(vars));
     return vars;
   }
   // Filter
@@ -190,6 +191,16 @@ window.addEventListener("load", function () {
     }
   });
 
+  // onchange filter pe tot
+  document.getElementById("cautare-nume").onchange = filter;
+  document.getElementById("cautare-tipuri").onchange = filter;
+  document
+    .getElementsByName("cautare-date")
+    .forEach((e) => (e.onchange = filter));
+  document.getElementById("cautare-noutati").onchange = filter;
+  document.getElementById("cautare-specs").onchange = filter;
+  document.getElementById("cautare-disponibilitate").onchange = filter;
+  document.getElementById("cautare-producator").onchange = filter;
   // Reset
   function reset() {
     document.getElementById("pret-curent").innerHTML =
@@ -354,16 +365,12 @@ window.addEventListener("load", function () {
   let inputElement = document.getElementById("cautare-nume");
   inputElement.addEventListener("change", (e) => {
     if (checkNumericChars(e.target.value)) {
-      this.alert('Prea multe numere in nume!');
-      inputElement.classList.add('is-invalid');
-    }
-    else {
-        try {
-            inputElement.classList.remove('is-invalid');
-        }
-        catch(e) {
-            
-        }
+      this.alert("Prea multe numere in nume!");
+      inputElement.classList.add("is-invalid");
+    } else {
+      try {
+        inputElement.classList.remove("is-invalid");
+      } catch (e) {}
     }
   });
 });

@@ -71,12 +71,17 @@ header {
 }
 header h1 {
   color: var(--secondary) !important;
-  flex-grow: 1;
-  margin-left: 15vw;
+  width: 10%;
+  margin-left: 2vw;
 }
 @media screen and (max-width: 800px) {
   header h1 {
     display: none;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+  header h1 {
+    font-size: 1.9em;
   }
 }
 header nav {
@@ -84,14 +89,13 @@ header nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-grow: 9;
+  width: 70%;
   padding: 0;
-  margin-right: 15vw;
 }
 @media screen and (max-width: 800px) {
   header nav {
     display: none;
-    margin-right: 0vw;
+    width: 100%;
     background-color: var(--primary) !important;
     -webkit-mask-image: linear-gradient(to top, transparent, white 100%);
     -webkit-mask-repeat: no-repeat;
@@ -130,6 +134,11 @@ header nav > ul > li {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 1400px) and (max-width: 1700px) {
+  header nav > ul > li {
+    width: 150px;
+  }
 }
 header nav > ul > li > a {
   width: var(--latime-celula);
@@ -227,13 +236,82 @@ header nav > ul .sublist:hover ul {
 }
 header > i {
   position: absolute;
-  left: 20px;
+  left: 5px;
   top: 20px;
   cursor: pointer;
 }
 @media screen and (max-width: 800px) {
   header > i {
     top: 8px !important;
+  }
+}
+header form {
+  max-height: 57px;
+  font-size: 0.8rem !important;
+  line-height: 1 !important;
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  align-items: center;
+  align-self: center;
+}
+header form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header form > div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  width: 100%;
+}
+header form input, header form a {
+  margin-left: 10px;
+}
+header form input {
+  padding: 0 !important;
+  font-size: 0.8rem !important;
+  width: 60% !important;
+}
+header form button {
+  padding: 0px 2px !important;
+}
+header form .buttons > a {
+  font-size: 0.7rem !important;
+}
+header form a {
+  color: var(--tertiary);
+}
+header form a:hover {
+  color: var(--quinary);
+}
+header form #logat {
+  width: 100%;
+  font-size: 1rem !important;
+}
+header form #logat a {
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  header form {
+    background-color: var(--primary);
+    width: 100%;
+    order: -1;
+    justify-content: flex-end !important;
+  }
+  header form #logat {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    height: 20px;
+    min-width: 30%;
+  }
+  header form #logat p {
+    margin: 0;
   }
 }
 

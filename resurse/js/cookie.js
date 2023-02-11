@@ -1,4 +1,4 @@
-function addCookie(name, value, time = 2592000000) { // Default 30 zile
+function addCookie(name, value, time = 43200000) { // Default 12hr
   let date = new Date();
   date.setTime(new Date().getTime() + time);
   console.log("setting cookies");
@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   let cookiebtnElement = document.getElementById("cookiebtn");
   cookiebtnElement.addEventListener("click", () => {
-    addCookie("accept-cookies", "true", 60000);
+    addCookie("accept-cookies", "true", 43200000);
     bannerElement.style.display = "none";
   });
 });
